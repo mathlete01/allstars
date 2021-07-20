@@ -49,6 +49,23 @@ document.addEventListener("DOMContentLoaded", function () {
     listPanel.appendChild(list);
   }
 
+  function renderAllQueens(queens) {
+    return queens.map(renderSingleQueen).join("");
+  }
+
+  function renderSingleQueen(queen) {
+    return `
+    <div class="card">
+      <div class="frame">
+        <h1>${queen.name}</h1>
+        <div>
+          <img class="image" src="${queen.image_url}">
+        </div>
+      </div>
+    </div>
+    `;
+  }
+
   // Get the content from the API
   function fetchContent(url) {
     // Go to the URL
@@ -56,7 +73,10 @@ document.addEventListener("DOMContentLoaded", function () {
       // Fetch returns a response object called a Promise. The data in the Promise is not directly accessible. We need to call a method on that Promise to convert the data into JSON.
       .then((response) => response.json())
       // The .then statement, in turn, returns another Promise. This is called Promise chaining. We take that json object we just created and pass it to a function called createList
-      .then((jsonObj) => createList(jsonObj));
+      .then((jsonObj) => {
+        console.log(jsonObj);
+        listPanel.innerHTML = renderAllQueens(jsonObj);
+      });
   }
 
   fetchContent(url);

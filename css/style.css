@@ -49,6 +49,27 @@ div {
   grid-row: 1;
 }
 
+.card {
+  float: left;
+  width: 250px;
+  margin: auto;
+}
+
+.frame {
+  width: 230px;
+  margin: 10px;
+  background: yellow;
+  color: blue;
+}
+
+.image {
+  float: left;
+  width: 100px;
+  height: 100px
+  /* margin: auto; */
+  object-fit: cover;
+}
+
 /* by ID */
 
 #paragraph1 {
