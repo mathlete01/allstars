@@ -1,0 +1,37 @@
+{
+  "devDependencies": {
+    "jasmine": "^3.8.0",
+    "request": "^2.88.2"
+  },
+  "name": "allstars",
+  "description": "In one terminal window: json-server --watch db.json In another terminal window: open index.html",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "balanced-match": "^1.0.2",
+    "brace-expansion": "^1.1.11",
+    "concat-map": "^0.0.1",
+    "fs.realpath": "^1.0.0",
+    "glob": "^7.1.7",
+    "inflight": "^1.0.6",
+    "inherits": "^2.0.4",
+    "jasmine-core": "^3.8.0",
+    "minimatch": "^3.0.4",
+    "once": "^1.4.0",
+    "path-is-absolute": "^1.0.1",
+    "wrappy": "^1.0.2"
+  },
+  "scripts": {
+    "test": "jasmine"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mathlete01/allstars.git"
+  },
+  "author": "Matty Sallin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mathlete01/allstars/issues"
+  },
+  "homepage": "https://github.com/mathlete01/allstars#readme"
+}
