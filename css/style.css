@@ -1,78 +1,88 @@
-/* by Element */
-
-/* body {
-  display: grid;
-  grid-template-columns: 2fr 8fr;
-} */
-
-h1 {
-  font-size: 20px;
+body {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue",
+    Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
 }
 
-p {
-  color: blue;
+#container {
+  width: 1000px;
+  margin: auto;
+  margin-top: 50px;
 }
 
-div {
-  /* background-color: orange; */
+#queen-search-form {
+  width: 500px;
+  margin: auto;
+  margin-top: 50px;
 }
 
-/* by Class */
-
-.container {
-  /* max-width: 1335px;
-  margin: 0 auto; */
-  display: grid;
-  grid-template-columns: 2fr 8fr;
-  grid-template-rows: 100px 100px;
-  grid-gap: 10px;
-  /* background-color: green; */
+#queen-search-input {
+  font-size: 3rem;
+  border: 3px solid #fecd2f;
+  color: #2d72fc;
 }
 
-.grid-row {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: flex-start;
+#queen-logo {
+  width: 300px;
+  margin-left: 330px;
 }
 
-.container > div {
-  flex: 1;
+input:focus {
+  outline: none;
 }
 
-.list {
-  grid-column: 1;
-  grid-row: 1;
-}
-
-.content {
-  grid-column: 2;
-  grid-row: 1;
-}
-
-.card {
+.queen-card {
   float: left;
   width: 250px;
   margin: auto;
 }
 
-.frame {
+.queen-frame {
   width: 230px;
   margin: 10px;
-  background: yellow;
-  color: blue;
+  background: #fecd2f;
+  color: #2d72fc;
 }
 
-.image {
-  float: left;
-  width: 100px;
-  height: 100px
-  /* margin: auto; */
-  object-fit: cover;
+.queen-image {
+  width: 96px;
+  margin: auto;
 }
 
-/* by ID */
+.center-text {
+  text-align: center;
+}
 
-#paragraph1 {
-  color: red;
-  font-size: 16px;
+.flip-image {
+  color: #2d72fc;
+}
+
+#queen-post-form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+#queen-post-form p {
+  font-size: 1.2rem;
+  color: #2d72fc;
+}
+
+#queen-post-form input[type="text"] {
+  font-size: 2rem;
+  border: 3px solid #fecd2f;
+  color: #2d72fc;
+}
+
+.queen-button {
+  font-size: 2rem;
+  border: 3px solid #2d72fc;
+  background-color: #fecd2f;
+  color: #2d72fc;
+}
+
+.queen-button:hover {
+  background-color: #2d72fc;
+  color: #fecd2f;
 }
