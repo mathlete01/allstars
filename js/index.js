@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const url = "http://www.nokeynoshade.party/api/queens/all";
 
   // Name pre-existing DOM Elements we will need to reference
-  const listPanel = document.getElementById("list-panel");
+  const container = document.getElementById("queen-container");
   const showPanel = document.getElementById("show-panel");
 
   // Create, name, and attach DOM Elements we will need to reference
@@ -12,8 +12,38 @@ document.addEventListener("DOMContentLoaded", function () {
   // listPanel.append(list);
 
   // Functions
+  function removeQueen(queen) {
+    const id = queen.querySelector("img").dataset.id;
+    console.log(queen);
+    fetch(url + `/${id}`, { method: "DELETE" })
+      .then((res) => res.json())
+      // pessimistic rendering
+      //.then(() => fetchAllPokemon())
+      // optimistic rendering
+      .then(() => {
+        // document.querySelector("#pokemon-container").removeChild(pokemon)
+        // pokemon.parentNode.removeChild(pokemon)
+        queen.remove();
+      });
+  }
+
+  function addQueenListener() {
+    const queens = document.querySelectorAll(".queen-card");
+    queens.forEach((queen) => {
+      queen
+        .querySelector(".queen-delete-button")
+        .addEventListener("click", () => {
+          removeQueen(queen);
+        });
+      queen.querySelector(".queen-add-button").addEventListener("click", () => {
+        addQueen(queen);
+      });
+    });
+  }
 
   function showQueen(queen) {
+    console.log("showQueen called");
+
     showPanel.innerHTML = "";
     // Create DOM elements
     let image = document.createElement("img");
@@ -30,37 +60,20 @@ document.addEventListener("DOMContentLoaded", function () {
     showPanel.append(image);
   }
 
-  function createList(queens) {
-    // Create Unordered List
-    const list = document.createElement("ul");
-    // Iterate through the array
-    for (let i = 0; i < queens.length; i++) {
-      // Create temporary variable I can reference for each element in the array
-      let queen = queens[i];
-      // Create a list item
-      let li = document.createElement("li");
-      li.addEventListener("click", () => showQueen(queen));
-      // Change the list item's text to the element's name
-      li.innerText = queen.name;
-      // Attach that newly created list item to the list
-      list.appendChild(li);
-    }
-    // Attach the list to the list panel
-    listPanel.appendChild(list);
-  }
-
   function renderAllQueens(queens) {
     return queens.map(renderSingleQueen).join("");
   }
 
   function renderSingleQueen(queen) {
     return `
-    <div class="queen-card">
+    <div class="queen-card" onClick= >
       <div class="queen-frame">
         <h1>${queen.name}</h1>
         <div>
           <img class="queen-image" src="${queen.image_url}">
         </div>
+        <button data-action="add" class="queen-add-button">Add</button><br>
+        <button data-action="delete" class="queen-delete-button">Delete</button><br>
       </div>
     </div>
     `;
@@ -68,7 +81,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Get the content from the API
   function fetchContent(url) {
-    console.log("fetchContent called");
     // Go to the URL
     fetch(url)
       // Fetch returns a response object called a Promise. The data in the Promise is not directly accessible. We need to call a method on that Promise to convert the data into JSON.
@@ -76,8 +88,8 @@ document.addEventListener("DOMContentLoaded", function () {
       // The .then statement, in turn, returns another Promise. This is called Promise chaining. We take that json object we just created and pass it to a function called createList
       .then((jsonObj) => {
         console.log(jsonObj);
-        const container = document.querySelector("#queen-container");
         container.innerHTML = renderAllQueens(jsonObj);
+        addQueenListener();
       });
   }
 
