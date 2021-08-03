@@ -4,8 +4,17 @@ document.addEventListener("DOMContentLoaded", function () {
   const url = "http://www.nokeynoshade.party/api/queens/all";
 
   // Name pre-existing DOM Elements we will need to reference
-  const container = document.getElementById("queen-container");
-  const showPanel = document.getElementById("show-panel");
+  const container1 = document.getElementById("queen-container-1");
+  const container2 = document.getElementById("queen-container-2");
+  const container3 = document.getElementById("queen-container-3");
+  const container4 = document.getElementById("queen-container-4");
+  const container5 = document.getElementById("queen-container-5");
+  const container6 = document.getElementById("queen-container-6");
+  const container7 = document.getElementById("queen-container-7");
+  const container8 = document.getElementById("queen-container-8");
+  const container9 = document.getElementById("queen-container-9");
+  const container10 = document.getElementById("queen-container-10");
+  const showPanel10 = document.getElementById("show-panel");
 
   // Create, name, and attach DOM Elements we will need to reference
   const list = document.createElement("ul");
@@ -80,18 +89,136 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Get the content from the API
-  function fetchContent(url) {
+  function fetchContent1(url) {
     // Go to the URL
-    fetch(url)
+    fetch("http://www.nokeynoshade.party/api/seasons/1/queens")
       // Fetch returns a response object called a Promise. The data in the Promise is not directly accessible. We need to call a method on that Promise to convert the data into JSON.
       .then((response) => response.json())
       // The .then statement, in turn, returns another Promise. This is called Promise chaining. We take that json object we just created and pass it to a function called createList
       .then((jsonObj) => {
         console.log(jsonObj);
-        container.innerHTML = renderAllQueens(jsonObj);
+        container1.innerHTML = renderAllQueens(jsonObj);
         addQueenListener();
       });
   }
 
-  fetchContent(url);
+  function fetchContent2(url) {
+    // Go to the URL
+    fetch("http://www.nokeynoshade.party/api/seasons/2/queens")
+      // Fetch returns a response object called a Promise. The data in the Promise is not directly accessible. We need to call a method on that Promise to convert the data into JSON.
+      .then((response) => response.json())
+      // The .then statement, in turn, returns another Promise. This is called Promise chaining. We take that json object we just created and pass it to a function called createList
+      .then((jsonObj) => {
+        console.log(jsonObj);
+        container2.innerHTML = renderAllQueens(jsonObj);
+        addQueenListener();
+      });
+  }
+  function fetchContent3(url) {
+    // Go to the URL
+    fetch("http://www.nokeynoshade.party/api/seasons/3/queens")
+      // Fetch returns a response object called a Promise. The data in the Promise is not directly accessible. We need to call a method on that Promise to convert the data into JSON.
+      .then((response) => response.json())
+      // The .then statement, in turn, returns another Promise. This is called Promise chaining. We take that json object we just created and pass it to a function called createList
+      .then((jsonObj) => {
+        console.log(jsonObj);
+        container3.innerHTML = renderAllQueens(jsonObj);
+        addQueenListener();
+      });
+  }
+  function fetchContent4(url) {
+    // Go to the URL
+    fetch("http://www.nokeynoshade.party/api/seasons/4/queens")
+      // Fetch returns a response object called a Promise. The data in the Promise is not directly accessible. We need to call a method on that Promise to convert the data into JSON.
+      .then((response) => response.json())
+      // The .then statement, in turn, returns another Promise. This is called Promise chaining. We take that json object we just created and pass it to a function called createList
+      .then((jsonObj) => {
+        console.log(jsonObj);
+        container4.innerHTML = renderAllQueens(jsonObj);
+        addQueenListener();
+      });
+  }
+  function fetchContent5(url) {
+    // Go to the URL
+    fetch("http://www.nokeynoshade.party/api/seasons/5/queens")
+      // Fetch returns a response object called a Promise. The data in the Promise is not directly accessible. We need to call a method on that Promise to convert the data into JSON.
+      .then((response) => response.json())
+      // The .then statement, in turn, returns another Promise. This is called Promise chaining. We take that json object we just created and pass it to a function called createList
+      .then((jsonObj) => {
+        console.log(jsonObj);
+        container5.innerHTML = renderAllQueens(jsonObj);
+        addQueenListener();
+      });
+  }
+  function fetchContent6(url) {
+    // Go to the URL
+    fetch("http://www.nokeynoshade.party/api/seasons/6/queens")
+      // Fetch returns a response object called a Promise. The data in the Promise is not directly accessible. We need to call a method on that Promise to convert the data into JSON.
+      .then((response) => response.json())
+      // The .then statement, in turn, returns another Promise. This is called Promise chaining. We take that json object we just created and pass it to a function called createList
+      .then((jsonObj) => {
+        console.log(jsonObj);
+        container6.innerHTML = renderAllQueens(jsonObj);
+        addQueenListener();
+      });
+  }
+  function fetchContent7(url) {
+    // Go to the URL
+    fetch("http://www.nokeynoshade.party/api/seasons/7/queens")
+      // Fetch returns a response object called a Promise. The data in the Promise is not directly accessible. We need to call a method on that Promise to convert the data into JSON.
+      .then((response) => response.json())
+      // The .then statement, in turn, returns another Promise. This is called Promise chaining. We take that json object we just created and pass it to a function called createList
+      .then((jsonObj) => {
+        console.log(jsonObj);
+        container7.innerHTML = renderAllQueens(jsonObj);
+        addQueenListener();
+      });
+  }
+  function fetchContent8(url) {
+    // Go to the URL
+    fetch("http://www.nokeynoshade.party/api/seasons/8/queens")
+      // Fetch returns a response object called a Promise. The data in the Promise is not directly accessible. We need to call a method on that Promise to convert the data into JSON.
+      .then((response) => response.json())
+      // The .then statement, in turn, returns another Promise. This is called Promise chaining. We take that json object we just created and pass it to a function called createList
+      .then((jsonObj) => {
+        console.log(jsonObj);
+        container8.innerHTML = renderAllQueens(jsonObj);
+        addQueenListener();
+      });
+  }
+  function fetchContent9(url) {
+    // Go to the URL
+    fetch("http://www.nokeynoshade.party/api/seasons/9/queens")
+      // Fetch returns a response object called a Promise. The data in the Promise is not directly accessible. We need to call a method on that Promise to convert the data into JSON.
+      .then((response) => response.json())
+      // The .then statement, in turn, returns another Promise. This is called Promise chaining. We take that json object we just created and pass it to a function called createList
+      .then((jsonObj) => {
+        console.log(jsonObj);
+        container9.innerHTML = renderAllQueens(jsonObj);
+        addQueenListener();
+      });
+  }
+  function fetchContent10(url) {
+    // Go to the URL
+    fetch("http://www.nokeynoshade.party/api/seasons/10/queens")
+      // Fetch returns a response object called a Promise. The data in the Promise is not directly accessible. We need to call a method on that Promise to convert the data into JSON.
+      .then((response) => response.json())
+      // The .then statement, in turn, returns another Promise. This is called Promise chaining. We take that json object we just created and pass it to a function called createList
+      .then((jsonObj) => {
+        console.log(jsonObj);
+        container10.innerHTML = renderAllQueens(jsonObj);
+        addQueenListener();
+      });
+  }
+
+  fetchContent1(url);
+  fetchContent2(url);
+  fetchContent3(url);
+  fetchContent4(url);
+  fetchContent5(url);
+  fetchContent6(url);
+  fetchContent7(url);
+  fetchContent8(url);
+  fetchContent9(url);
+  fetchContent10(url);
 });
